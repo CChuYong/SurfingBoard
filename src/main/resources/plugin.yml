@@ -1,0 +1,4 @@
+name: SurfingBoard
+version: '${version}'
+main: kr.chuyong.surfingboard.SurfingBoard
+api-version: 1.20

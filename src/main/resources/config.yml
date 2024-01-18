@@ -1,0 +1,25 @@
+# Datasource Configuration
+# Available datasource: MySQL, YAML
+datasource: YAML
+
+# MySQL Datasource Configuration
+mysql:
+  host: localhost
+  port: 3306
+  database: minecraft
+  username: root
+  password: 1234
+
+#YAML Datasource Configuration
+servers:
+  - serverName: myServerName1
+    hostName: localhost
+    port: 25566
+  - serverName: myServerName2
+    hostName: localhost
+    port: 25567
+
+# Plugin Configuration
+#  serverUpdatePeriod: Time to update server information from datasource
+surfing:
+  serverUpdatePeriod: 1200 # 1 minute (based on Tick). -1 to Disable auto update
