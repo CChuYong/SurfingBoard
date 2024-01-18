@@ -23,13 +23,13 @@ public class MockedPacketSurfingAPI implements SurfingAPI {
 
     @Override
     public void surfToServer(Player player, SurfServer targetServer) {
-        player.sendMessage(ChatColor.RED + "[SurfingBoard] Currently, SurfingBoard does not support Teleport between servers.");
-        player.sendMessage(ChatColor.RED + "[SurfingBoard] As 1.20.5 Release, We will update this feature.");
-        player.sendMessage(ChatColor.RED + "[SurfingBoard] Until that, Keep using this plugin to store server information!");
-        player.sendMessage(ChatColor.RED + "[SurfingBoard] ");
-        player.sendMessage(ChatColor.RED + "[SurfingBoard] Your Stored Target Server Information:");
-        player.sendMessage(ChatColor.RED + "[SurfingBoard] serverName: " + targetServer.serverName());
-        player.sendMessage(ChatColor.RED + "[SurfingBoard] hostName: " + targetServer.hostName());
-        player.sendMessage(ChatColor.RED + "[SurfingBoard] port: " + targetServer.port());
+        player.sendMessage(ChatColor.RED + "[S/B] Currently, SurfingBoard does not support Teleport between servers.");
+        player.sendMessage(ChatColor.RED + "[S/B] As 1.20.5 Release, We will update this feature.");
+        player.sendMessage(ChatColor.RED + "[S/B] Until that, Keep using this plugin to store server information!");
+        player.sendMessage(ChatColor.RED + " ");
+        player.sendMessage(ChatColor.AQUA + "[S/B] Your Stored Target Server Information:");
+        player.sendMessage(ChatColor.AQUA + "[S/B] serverName: §f" + targetServer.serverName());
+        player.sendMessage(ChatColor.AQUA + "[S/B] hostName: §f" + targetServer.hostName());
+        player.sendMessage(ChatColor.AQUA + "[S/B] port: §f" + targetServer.port());
     }
 }

@@ -3,6 +3,7 @@
 datasource: YAML
 
 # MySQL Datasource Configuration
+# Not used if datasource is YAML
 mysql:
   host: localhost
   port: 3306
@@ -11,6 +12,7 @@ mysql:
   password: 1234
 
 #YAML Datasource Configuration
+# Not used if datasource is MySQL
 servers:
   - serverName: myServerName1
     hostName: localhost

@@ -4,11 +4,14 @@ import kr.chuyong.surfingboard.api.SurfServerAPI;
 import kr.chuyong.surfingboard.api.SurfingAPI;
 import kr.chuyong.surfingboard.api.impl.SurfServerAPIImpl;
 import kr.chuyong.surfingboard.api.impl.MockedPacketSurfingAPI;
+import kr.chuyong.surfingboard.command.SurfCommand;
 import kr.chuyong.surfingboard.datasource.MySQLSurfServerDataSource;
 import kr.chuyong.surfingboard.datasource.SurfServerDataSource;
 import kr.chuyong.surfingboard.datasource.YamlSurfServerDataSource;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.Objects;
 
 public final class SurfingBoard extends JavaPlugin {
     private static SurfServerAPI surfServerAPI;
@@ -45,6 +48,10 @@ public final class SurfingBoard extends JavaPlugin {
 
         surfServerAPI = surfServerAPIImpl;
         surfingAPI = surfingAPIImpl;
+
+        SurfCommand surfCommand = new SurfCommand(surfServerAPI, surfingAPIImpl);
+        Objects.requireNonNull(getCommand("surf")).setExecutor(surfCommand);
+        Objects.requireNonNull(getCommand("surf")).setTabCompleter(surfCommand);
 
         long elapsed = System.currentTimeMillis() - startTime;
         getLogger().info("Plugin loaded successfully! (took " + elapsed + "ms)");

@@ -22,9 +22,14 @@ public class SurfServerAPIImpl implements SurfServerAPI {
 
     public void initialize() {
         this.updateServers();
-        plugin.getServer().getScheduler()
-                .runTaskTimerAsynchronously(plugin, this::updateServers,
-                        configuration.serverUpdatePeriod(), configuration.serverUpdatePeriod());
+
+        if(configuration.serverUpdatePeriod() != -1) {
+            plugin.getLogger().info("Starting SurfServer cache updater...");
+            plugin.getServer().getScheduler()
+                    .runTaskTimerAsynchronously(plugin, this::updateServers,
+                            configuration.serverUpdatePeriod(), configuration.serverUpdatePeriod());
+        }
+
     }
 
     private void updateServers() {

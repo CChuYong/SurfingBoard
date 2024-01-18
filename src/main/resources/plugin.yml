@@ -1,4 +1,15 @@
 name: SurfingBoard
 version: '${version}'
+author: CChuYong
+website: https://github.com/CChuYong/SurfingBoard
 main: kr.chuyong.surfingboard.SurfingBoard
 api-version: 1.20
+
+commands:
+  surf:
+    description: SurfingBoard Commands
+    usage: /<command>
+    aliases: [surfingboard, sb]
+    permission: surfingboard.command.surf
+    permission-message: §4You do not have permission to use this command.
+    default: op
