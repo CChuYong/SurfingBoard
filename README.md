@@ -13,6 +13,37 @@ But until release, you can still use this plugin to store your server lists and 
 - `/surf all <serverName>`: Send everyone to the server.
 - `/surf <serverName>`: Send yourself to target server.
 
+## Configuration
+```yaml
+# Datasource Configuration
+# Available datasource: MySQL, YAML
+datasource: YAML
+
+# MySQL Datasource Configuration
+# Not used if datasource is YAML
+mysql:
+  host: localhost
+  port: 3306
+  database: minecraft
+  username: root
+  password: 1234
+
+#YAML Datasource Configuration
+# Not used if datasource is MySQL
+servers:
+  - serverName: myServerName1
+    hostName: localhost
+    port: 25566
+  - serverName: myServerName2
+    hostName: localhost
+    port: 25567
+
+# Plugin Configuration
+#  serverUpdatePeriod: Time to update server information from datasource
+surfing:
+  serverUpdatePeriod: 1200 # 1 minute (based on Tick). -1 to Disable auto update
+```
+
 ## Developer API
 ### Importing SurfingBoard API
 ```java
