@@ -3,7 +3,7 @@ package kr.chuyong.surfingboard;
 import kr.chuyong.surfingboard.api.SurfServerAPI;
 import kr.chuyong.surfingboard.api.SurfingAPI;
 import kr.chuyong.surfingboard.api.impl.SurfServerAPIImpl;
-import kr.chuyong.surfingboard.api.impl.TemporaryPacketSurfingAPI;
+import kr.chuyong.surfingboard.api.impl.MockedPacketSurfingAPI;
 import kr.chuyong.surfingboard.datasource.MySQLSurfServerDataSource;
 import kr.chuyong.surfingboard.datasource.SurfServerDataSource;
 import kr.chuyong.surfingboard.datasource.YamlSurfServerDataSource;
@@ -41,7 +41,7 @@ public final class SurfingBoard extends JavaPlugin {
         SurfServerAPIImpl surfServerAPIImpl = new SurfServerAPIImpl(this, dataSource, surfingConfiguration);
         surfServerAPIImpl.initialize();
 
-        TemporaryPacketSurfingAPI surfingAPIImpl = new TemporaryPacketSurfingAPI(surfServerAPIImpl);
+        MockedPacketSurfingAPI surfingAPIImpl = new MockedPacketSurfingAPI(surfServerAPIImpl);
 
         surfServerAPI = surfServerAPIImpl;
         surfingAPI = surfingAPIImpl;
