@@ -16,13 +16,18 @@ public final class SurfingBoard extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        long startTime = System.currentTimeMillis();
+        this.saveDefaultConfig();
+
         String dataSourceType = getConfig().getString("datasource", "YAML");
+        getLogger().info("Loading plugin using DataSource: " + dataSourceType + "...");
         SurfServerDataSource dataSource = switch(dataSourceType.toLowerCase()) {
             case "yaml" -> new YamlSurfServerDataSource(getConfig());
             case "mysql" -> new MySQLSurfServerDataSource(getConfig().getConfigurationSection("mysql"));
             default -> throw new IllegalArgumentException("DataSource type must be yaml or mysql");
         };
         dataSource.initialize();
+        getLogger().info("Datasource initialization completed!");
 
         ConfigurationSection section = getConfig().getConfigurationSection("surfing");
         if(section == null) throw new IllegalArgumentException("Surfing section must be defined in config.yml");
@@ -32,6 +37,7 @@ public final class SurfingBoard extends JavaPlugin {
         );
 
 
+        getLogger().info("Initializing default SurfServer systems...");
         SurfServerAPIImpl surfServerAPIImpl = new SurfServerAPIImpl(this, dataSource, surfingConfiguration);
         surfServerAPIImpl.initialize();
 
@@ -39,6 +45,9 @@ public final class SurfingBoard extends JavaPlugin {
 
         surfServerAPI = surfServerAPIImpl;
         surfingAPI = surfingAPIImpl;
+
+        long elapsed = System.currentTimeMillis() - startTime;
+        getLogger().info("Plugin loaded successfully! (took " + elapsed + "ms)");
     }
 
     @Override

@@ -28,12 +28,14 @@ public class SurfServerAPIImpl implements SurfServerAPI {
     }
 
     private void updateServers() {
+        plugin.getLogger().info("Updating SurfServer cache...");
         List<SurfServer> servers = dataSource.loadFromDatabase();
         ConcurrentHashMap<String, SurfServer> newServerCache = new ConcurrentHashMap<>();
         for(SurfServer server : servers) {
             newServerCache.put(server.serverName(), server);
         }
         serverCache = newServerCache;
+        plugin.getLogger().info("Updating SurfServer cache completed! Server count: " + servers.size());
     }
 
     @Override
