@@ -1,0 +1,14 @@
+ext {
+    PUBLISH_NAME = 'kr.chuyong:surfingboard'
+    PUBLISH_ARTIFACT_ID = 'surfingboard'
+    PUBLISH_DESCRIPTION = 'Surf between Minecraft Servers using 1.20.5 Transfer!'
+    PUBLISH_URL = 'https://github.com/CChuYong/SurfingBoard'
+    PUBLISH_LICENSE_NAME = 'GPL-2.0 License'
+    PUBLISH_LICENSE_URL = 'https://github.com/CChuYong/SurfingBoard/blob/master/LICENSE.md'
+    PUBLISH_DEVELOPER_ID = 'CChuYong'
+    PUBLISH_DEVELOPER_NAME = 'Yeongmin Song'
+    PUBLISH_DEVELOPER_EMAIL = 'yeongmin1061@gmail.com'
+    PUBLISH_SCM_CONNECTION = 'scm:git:github.com/CChuYong/SurfingBoard.git'
+    PUBLISH_SCM_DEVELOPER_CONNECTION = 'scm:git:ssh://github.com:CChuYong/SurfingBoard.git'
+    PUBLISH_SCM_URL = 'https://github.com/CChuYong/SurfingBoard/tree/master'
+}
