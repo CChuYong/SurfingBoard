@@ -1,5 +1,5 @@
 # SurfingBoard
-[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html) [![Maven Central](https://img.shields.io/maven-central/v/kr.chuyong/surfingboard.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/kr.chuyong/surfingboard.svg)  
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/CChuYong/SurfingBoard/build.yaml) ![GitHub Release](https://img.shields.io/github/v/release/CChuYong/SurfingBoard) [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html) [![Maven Central](https://img.shields.io/maven-central/v/kr.chuyong/surfingboard.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/kr.chuyong/surfingboard.svg)  
 Easily surf between servers via Minecraft 1.20.5 new packet feature: Transfer!  
 This plugin will store your server lists and allow you to surf between servers easily. 
 Also, this plugin provides MySQL DataSource to share and sync your server lists across the different servers.
