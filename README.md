@@ -1,4 +1,5 @@
 # SurfingBoard
+[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html) [![Maven Central](https://img.shields.io/maven-central/v/kr.chuyong/surfingboard.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/kr.chuyong/surfingboard.svg)  
 Easily surf between servers via Minecraft 1.20.5 new packet feature: Transfer!  
 This plugin will store your server lists and allow you to surf between servers easily. 
 Also, this plugin provides MySQL DataSource to share and sync your server lists across the different servers.
@@ -46,6 +47,13 @@ surfing:
 
 ## Developer API
 ### Importing SurfingBoard API
+As SurfingBoard uploaded to Maven Central, you could easily import from gradle/maven.
+```
+dependencies {
+  implementation 'kr.chuyong:surfingboard:1.0.0'
+}
+```
+
 ```java
 import kr.chuyong.surfingboard.SurfingBoard;
 import kr.chuyong.surfingboard.api.SurfingAPI;
