@@ -5,6 +5,7 @@ on:
     paths:
       - 'src/**'
       - 'build.gradle'
+      - '.github/workflows/build.yaml'
 
 concurrency:
   group: build
